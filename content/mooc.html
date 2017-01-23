@@ -1,0 +1,145 @@
+{% extends "ananth_base.j2" %}
+
+{% block css %}
+<link href="media/css/creative_subpages.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+
+<section class="bg-primary">
+    <div class="container">
+            <h1 align="center"><b> My favorite MOOCs </b></h1> <br><br>
+
+
+            <p>
+                Massive Open Online Courses (MOOCs) have democratized education and has made quality education
+                accessible. I do not view MOOCs as a replacement for the traditional collegiate experience, but as a
+                great way to gain exposure to new fields of study or to gain specific skills in a structured
+                environment. <br><br>
+
+                What's the catch? I've seen a whole bunch of snake oil salesemen sell mediocre courses at a hefty
+                price, much to my chagrin. Compared to a few years ago, finding good courses is like
+                finding a needle in a haystack. <br><br>
+
+                I was lucky since I barely spent any money on these courses thanks to discounts or my employer's
+                generosity. The sticker price may or may not be worth it to you. Additionally, for the employers reading
+                this post, I think that it is great RoI for a company to purchase these courses as a part of new
+                employee training.
+                <br><br>
+
+                I've put together a list of courses that I found particularly useful in my development and
+                my experiences. <br><br>
+
+            </p>
+
+    </div>
+
+    <div class="container">
+
+            <table class="table">
+                <thead style="background-color: darkslategrey; color: white">
+                <tr>
+                    <th></th>
+                    <th class="col-md-3" style="text-align: center">Course Name</th>
+                    <th class="col-md-1" style="text-align: center">Provider</th>
+                    <th class="col-md-8" style="text-align: center">Comments</th>
+                </tr>
+                </thead>
+                <tbody style="background-color: linen; color: black">
+                <tr>
+                    <th scope="row"></th>
+                    <td class="col-md-3" style="text-align: center">
+                        <a href="https://www.coursera.org/learn/machine-learning">Machine Learning by Andrew Ng</a>
+                    </td>
+                    <td class="col-md-1" style="text-align: center"> Coursera </td>
+                    <td class="col-md-8" style="text-align: center">
+                        The quintessential MOOC. Prof. Ng is a great teacher and an inspiration. There really isn't much
+                        more to say than how influential this man is for popularizing machine learning.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td class="col-md-3" style="text-align: center">
+                        <a href="http://udacity.com/courses/cs101">CS 101 by David Evans </a>
+                    </td>
+                    <td class="col-md-1" style="text-align: center"> Udacity </td>
+                    <td class="col-md-8" style="text-align: center">
+                        I found CS 101 a great course to get my feet wet with the fundamentals of CS and to
+                        start thinking about problems algorithmically.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td class="col-md-3" style="text-align: center">
+                        <a href="https://www.udemy.com/learning-python-for-data-analysis-and-visualization/learn/v4/">
+                            Python for Data Analysis by Jose Portilla</a>
+                    </td>
+                    <td class="col-md-1" style="text-align: center"> Udemy </td>
+                    <td class="col-md-8" style="text-align: center">
+                        Coming from a familiarity with R, I had to get up to speed in Python fairly quickly for a job
+                        and I found Portilla's course very useful in getting familiarized with the basics of Python.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td class="col-md-3" style="text-align: center">
+                        <a href="https://www.udemy.com/sql-for-newbs/learn/v4/overview">
+                            SQL for Newbs: Beginner Data Analysis</a>
+                    </td>
+                    <td class="col-md-1" style="text-align: center"> Udemy </td>
+                    <td class="col-md-8" style="text-align: center">
+                        Are you interested in learning SQL but have no idea where to start? If so, this course by
+                        David Kim and Peter Sefton is a fun way to learn the basics of SQL.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td class="col-md-3" style="text-align: center">
+                        <a href="https://www.udemy.com/taming-big-data-with-apache-spark-hands-on/learn/v4/overview">
+                          Taming Big Data with Apache Spark and Python  </a>
+                    </td>
+                    <td class="col-md-1" style="text-align: center"> Udemy </td>
+                    <td class="col-md-8" style="text-align: center">
+                        Ever wanted to explore the wonderful technology called Spark? In this small and simple course,
+                        Frank Kane introduces you to the basics
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

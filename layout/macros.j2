@@ -1,0 +1,80 @@
+{% macro render_latest_posts(count=None) -%}
+<ul class="latest-posts">
+{% for res in site.content.walk_resources_sorted_by_latest()[0:count] %}
+<li>
+    <div class="title">
+        <a href="{{ res.full_url }}">{{ res.meta.title }}</a>
+    </div>
+    <div class="meta">
+        <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+        {{ res.meta.created.strftime('%Y-%m-%d') }}</time>
+        <span>{{ res.meta.category }}</span>
+    </div>
+</li>
+{% endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro render_main_navigation(element_id="") -%}
+<nav id="{{ element_id }}" class="clearfix">
+<ul class="clearfix">
+    {% call(menu_item, is_active) run_through_menu() %}
+    <li{% if is_active %} class="active"{% endif %}><a
+        href="{{ content_url(menu_item.url) }}">{{ menu_item.name }}</a></li>
+    {% endcall %}
+</ul>
+</nav>
+{%- endmacro %}
+
+{% macro run_through_menu() -%}
+    {% for menu_item in menu %}
+    {% set is_active = False -%}
+    {% if menu_item.type == 'page' -%}
+        {% set is_active = (resource.url ==
+            site.content.resource_from_relative_path(menu_item.url).url) -%}
+    {% else -%}
+        {% set is_active = (node ==
+            site.content.node_from_relative_path(menu_item.url)) -%}
+    {%- endif %}
+    {{ caller(menu_item, is_active) }}
+    {% endfor %}
+{%- endmacro %}
+
+{% macro external_image(path, alt) -%}
+<img src="{{ media_url('external') }}/{{ path }}" alt="{{ alt }}" />
+{%- endmacro %}
+
+{% macro external_wide_image(path, alt) -%}
+<img class="wide" src="{{ media_url('external') }}/{{ path }}" alt="{{ alt }}" />
+{%- endmacro %}
+
+{% macro external_figure(path, caption) -%}
+<figure>
+<img src="{{ media_url('external') }}/{{ path }}" />
+<figcaption class="figure-caption">{{ caption }}</figcaption>
+</figure>
+{%- endmacro %}
+
+{% macro embed_video(video_id, platform) -%}
+{%- if platform|lower == 'youtube' -%}
+    {% set platform_url = '//www.youtube.com/embed/' %}
+{%- elif platform|lower == 'vimeo' -%}
+    {% set platform_url = '//player.vimeo.com/video/' %}
+{%- endif -%}
+<div class="responsive-embedded-container">
+    <iframe src="{{ platform_url }}{{ video_id }}"
+        frameborder="0" allowfullscreen></iframe>
+</div>
+{%- endmacro %}
+
+{# docs: https://dev.twitter.com/docs/embedded-tweets #}
+{% macro embed_tweet(content, username, tweet_id, timestamp) -%}
+<blockquote class="twitter-tweet"
+            data-link-color="#06736C" {# light green #}
+            data-dnt="true"> {# don't use Twitter tailoring and tracking #}
+    <p>{{ content }}</p>
+    &mdash; @{{ username }}
+    <a href="https://twitter.com/{{ username }}/status/{{ tweet_id }}">{{ timestamp }}</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{%- endmacro %}

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'),
+       url({{ media_url('fonts/Source_Sans_Pro_Black.woff') }}) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('OpenSans'), local('Open Sans'),
+       url({{ media_url('fonts/OpenSans-Regular.woff') }}) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('OpenSans-Italic'), local('Open Sans Italic'),
+       url({{ media_url('fonts/OpenSans-Italic.woff') }}) format('woff');
+}

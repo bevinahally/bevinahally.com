@@ -1,0 +1,67 @@
+{% import "macros.j2" as macros with context %}
+<!DOCTYPE HTML>
+<!--
+I love people who check under the hood. This whole website is open-sourced
+on GitHub (https://github.com/merlinrebrovic/merlin.rebrovic.net), so that
+is also a nice place to check out the building blocks.
+
+I also tweet about design and (mostly) front-end engineering, so don't be
+a stranger and say "Hi" on https://twitter.com/merlinrebrovic :)
+-->
+<html lang="en"{% if resource.meta.blog_post %} itemscope itemtype="http://schema.org/BlogPosting" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"{% endif %}>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#20201C">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>{% if resource.meta.title %}{{ resource.meta.title }} – {% endif %}Merlin Rebrović</title>
+{% if resource.meta.blog_post %}{% include "meta_tags_snippets.j2" %}{% endif %}
+{% if site.config.mode == "development" -%}
+    {# Use local fonts for development. #}
+    <link rel="stylesheet" href="{{ media_url('css/fonts.css') }}" type="text/css">
+{% endif %}
+{% if site.config.mode == "production" -%}
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic|Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+{% endif %}
+{% set cssfile = site.content.resource_from_relative_path('media/css/style.css') %}
+    <link rel="stylesheet" href="{{ cssfile.full_url }}?v={{ cssfile.meta.content_hash }}" type="text/css">
+</head>
+<body>
+    <header>
+    <div id="top" class="clearfix">
+
+        {# Current location #}
+        {% call(menu_item, is_active) macros.run_through_menu() %}
+        {% if is_active %}<span class="current-location">Location: {{ menu_item.name }}</span>{% endif %}
+        {% endcall %}
+
+        <a href="#bottom-nav">Menu &#x25bc;</a>
+    </div>
+    {{ macros.render_main_navigation("top-nav") }}
+    </header>
+
+    <div id="main-content" class="clearfix">
+    {# This check was introduced when Hyde started using Jinja 2.7
+       which broke this website. More details about the issue:
+       https://github.com/mitsuhiko/jinja2/pull/84#issuecomment-19208621
+
+       Lakshmi suggested:
+         * Differentiate the listing page from the content pages
+         * Use an alternate root block for content pages
+         * Call the block instead of declaring it in base template
+     #}
+    {% if not resource.meta.blog_post %}
+        {% block content %}{% endblock %}
+    {% else %}
+        {{ self.blog_post() }}
+    {% endif %}
+    </div>
+    {{ macros.render_main_navigation("bottom-nav") }}
+    <a data-action="track-event" data-gacategory="Navigation"
+       data-gaaction="Back to top"
+       href="#top" class="back-to-top">Back to top &#x25b2;</a>
+
+{% set jsfile = site.content.resource_from_relative_path('media/js/app.js') %}
+<script src="{{ jsfile.full_url }}?v={{ jsfile.meta.content_hash }}"></script>
+</body>
+</html>

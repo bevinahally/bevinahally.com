@@ -1,0 +1,233 @@
+{% extends "ananth_base.j2" %}
+
+{% block css %}
+<link href="media/css/creative.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">Welcome to my personal website!</h1><br><br>
+            <!--<hr>-->
+            <!--<p> I put this website together to share my passion for tech and music.</p>-->
+            <a href="#about" class="btn btn-primary btn-xl page-scroll">A little about myself</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-lg-3 col-md-6 text-center">-->
+            <!--<div class="service-box">-->
+            <!--<i class="fa fa-4x fa-diamond text-primary sr-icons"></i>-->
+            <!--<h3>Sturdy Templates</h3>-->
+            <!--<p class="text-muted">Our templates are updated regularly so they don't break.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading" >A little bit about myself. </h2>
+                <hr class="light">
+            </div>
+            <div class="col-xs-4">
+                <img src="media/img/ananth.png" class="img-responsive" alt="">
+
+            </div>
+            <div class="col-xs-8">
+                <p class="text-faded">
+                    <br><br>
+                    Hello there! I'm Ananth Bevinahally and I work as a quantitative analyst at a
+                    Philadelphia-based startup called
+                    <a href="http://www.helloglobo.com/" style = "color: #ed885a"><b>GLOBO</b></a>.
+                    I got into technology towards the very end of my senior year,
+                    and I found blogs written by beginners to be the most useful since the blogger could relate to my struggles.
+                    <br><br>
+                    This is
+                    my attempt at giving back to the incredible open source community.
+
+                    I additionally am an avid music fan and I'd like to share some of the many amazing adventures
+                    I've had the pleasure of experiencing. All the photos on this website are shot by myself.
+
+
+                </p>
+            </div>
+
+            <!--<a href="#tech_blog" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>-->
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="tech_blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Tech things that I find cool.</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-4 text-center">
+                <div class="service-box"> <br><br><br><br>
+                    <i class="fa fa-4x fa-book text-primary sr-icons"></i>
+                    <h3><a href="reading.html">Reading</a></h3>
+                    <p class="text-muted"> Blogs, books, articles and other resources that I enjoy.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-4 text-center">
+                <div class="service-box"> <br><br><br><br>
+                    <i class="fa fa-4x fa-desktop text-primary sr-icons"></i>
+                    <h3><a href="mooc.html">MOOCs</a></h3>
+                    <p class="text-muted"> I've learned a lot from Massive Open Online Courses(MOOCs),
+                        but this space can get saturated easily. Here are some MOOCs that I found particularly helpful.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="bg-dark" id="music">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading" > I really enjoy sharing my love for music.</h2>
+                <hr class="light">
+            </div>
+            <div class="col-xs-4">
+                <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1223003269%3Aplaylist%3A3uG6M0EBDoLEMhNzHsxHj5" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+            </div>
+            <div class="col-xs-8">
+                <p class="text-faded">
+                    <br><br>
+                    I've had a life-long passion for music and what better way to keep track of my experiences
+                    than blogging about them?
+                </p>
+
+                <a href="music_blog/2016_best_concerts.html"
+                   class="btn btn-primary btn-xl col-md-9 page-scroll"> Best concerts attened in 2016</a> <br><br><br>
+
+            </div>
+
+
+            <!--<a href="#tech_blog" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>-->
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<!--<section class="bg-primary" id="portfolio">-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-lg-12 text-center">-->
+                <!--<h2 class="section-heading">I occasionally like to take photographs of my travels.</h2>-->
+                <!--<hr class="light">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="row no-gutter popup-gallery">-->
+            <!--<div class="col-lg-4 col-sm-6">-->
+                <!--<a href="media/img/photos/background.jpg" class="portfolio-box">-->
+
+                    <!--<img src="media/img/photos/background.jpg" class="img-responsive" alt="">-->
+                    <!--<div class="portfolio-box-caption">-->
+                        <!--<div class="portfolio-box-caption-content">-->
+                            <!--<div class="project-category text-faded">-->
+                                <!--Photographs-->
+                            <!--</div>-->
+                            <!--<div class="project-name">-->
+                                <!--&lt;!&ndash;Photographs&ndash;&gt;-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</a>-->
+                <!--<a href="media/img/photos/joshua_tree_2.jpg" class="portfolio-box"></a>-->
+                <!--<a href="media/img/photos/canyon.jpg" class="portfolio-box"></a>-->
+                <!--<a href="media/img/photos/joshua_tree_3.jpg" class="portfolio-box"></a>-->
+                <!--<a href="media/img/photos/joshua_tree_2.jpg" class="portfolio-box"></a>-->
+
+            <!--</div>-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--<div class="col-lg-4 col-sm-6">-->
+                <!--<a href="media/img/photos/canyon.jpg" class="portfolio-box">-->
+
+                    <!--<img src="media/img/photos/canyon.jpg" class="img-responsive" alt="">-->
+                    <!--<div class="portfolio-box-caption">-->
+                        <!--<div class="portfolio-box-caption-content">-->
+                            <!--<div class="project-category text-faded">-->
+                                <!--Photographs-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;<div class="project-name">&ndash;&gt;-->
+                            <!--&lt;!&ndash;Photographs&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="col-lg-4 col-sm-6">-->
+                <!--<a href="media/img/photos/joshua_tree_2.jpg" class="portfolio-box">-->
+
+                    <!--<img src="media/img/photos/joshua_tree_2.jpg" class="img-responsive" alt="">-->
+                    <!--<div class="portfolio-box-caption">-->
+                        <!--<div class="portfolio-box-caption-content">-->
+                            <!--<div class="project-category text-faded">-->
+                                <!--Photographs-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;<div class="project-name">&ndash;&gt;-->
+                            <!--&lt;!&ndash;Photographs&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+
+
+        <!--</div>-->
+<!--</section>-->
+
+
+
+
+
+
+
+
+
+<section class="bg-primary" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading"> Want to get in touch with me?</h2>
+                <hr class="primary">
+            </div>
+            <div class="col-lg-12 text-center">
+
+                <a class="btn btn-social-icon.btn-lg btn-github" href="https://github.com/bevinahally">
+                    <span class="fa fa-4x fa-github"></span>
+                </a>
+                <a class="btn btn-social-icon.btn-lg btn-linkedin" href="https://www.linkedin.com/in/bevinahally">
+                    <span class="fa fa-4x fa-linkedin"></span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
