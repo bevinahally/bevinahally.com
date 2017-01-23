@@ -4,7 +4,7 @@ Ananth's website
 Hi, this is a little fun project that I'm working on when I have some free time. I generated this website using [Hyde](https://github.com/hyde/hyde), a static website generator.
 
 
-Over the course of the next couple of months I'll be adding content while I build out the website. 
+Over the course of the next couple of months I'll be adding content while I build out the website. Replace the analytics_key with your own Google Analytics tracking key in the `layout/ananth_base.j2` file.
 
 
 
